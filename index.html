@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <title>Burger King - Pass Time</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="score_help">
+    <div id="logo">
+      <img src="logo.png" alt="logo" style="height: 100%; width: 100%;">
+    </div> 
+    <div>SCORE: <span id="score">0</span></div>
+    <div>LIFE: <span id="life"></span></div>
+  </div>
+
+  <div id="branch"></div>
+  <div id="container">
+
+    <!-- <div id="egg1" class="egg" data-bullseye='1'></div>
+    <div id="egg2" class="egg" data-bullseye='2'></div>
+    <div id="egg3" class="egg" data-bullseye='3'></div> -->
+    
+    <img id="egg1" class="egg" data-bullseye='1' src="burger.png"></img>
+    <img id="egg2" class="egg" data-bullseye='2' src="burger.png" ></img>
+    <img id="egg3" class="egg" data-bullseye='3' src="burger.png" ></img>
+
+    <div id="bullseye1" class="bullseye"></div>
+    <div id="bullseye2" class="bullseye"></div>
+    <div id="bullseye3" class="bullseye"></div>
+
+    <div id="basket" draggable="true">
+      <img src="king.png" alt="king" height="100%" width="100%">
+      <img src="burger.png" alt="dish" id="dish">
+    </div>
+
+    <div id="floor"></div>
+
+    <button id="restart">Restart</button>
+
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="collision_detection.js"></script>
+  <script src="variables.js"></script>
+  <script src="functions.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
