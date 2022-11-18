@@ -9,7 +9,6 @@ body {
 #container {
     height: 85%;
     position: relative;
-    /* border: 1px solid red; */
     overflow: hidden;
     background-color: #ef3d36;
 }
@@ -24,7 +23,8 @@ body {
     background-color: #fff;
     height: 15%;
     color: brown;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: bolder;
     padding: 0 5vw;
 }
@@ -65,7 +65,7 @@ body {
     position: absolute;
     top: 18%;
     height: 12vh;
-    width: 20vw;
+    width: 15vw;
     z-index: 99;
     border: none;
 }
@@ -117,20 +117,20 @@ body {
 }
 
 #basket {
-    height: 20vh;
-    width: 53vw;
+    height: 22vh;
+    width: 30vw;
     position: absolute;
     text-align: center;
     bottom: 0px;
-    z-index: 11;
+    z-index: 110;
 }
 
 #dish {
     position: absolute;
     top: -5.5%;
-    left: 2%;
+    left: -3%;
     height: 12vh;
-    width: 20vw;
+    width: 15vw;
 }
 
 #restart {
@@ -151,5 +151,21 @@ body {
     #score_help {
         justify-content: space-between;
         font-size: 3vh;
+    }
+
+    .egg{
+        height: 12vh;
+        width: 20vw;
+    }
+
+    #dish{
+        height: 12vh;
+        width: 20vw;
+        left: 2%;
+    }
+
+    #basket{
+        height: 20vh;
+        width: 53vw;
     }
 }
