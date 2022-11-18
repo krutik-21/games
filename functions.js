@@ -1,4 +1,4 @@
-$(document).on('drag', function (e) {
+$(document).on('mousemove', function (e) {
     basket.css('left', e.pageX);
 });
 
