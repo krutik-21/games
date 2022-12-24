@@ -71,15 +71,15 @@ body {
 }
 
 #egg1 {
-    left: calc(1% + 8%/2 - 2%/2);
+    left: 0%;
 }
 
 #egg2 {
-    left: calc(37% + 8%/2 - 2%/2);
+    left: 40%;
 }
 
 #egg3 {
-    left: calc(60% + 8%/2 - 2%/2);
+    left: 80%;
 }
 
 .bullseye {
@@ -120,9 +120,12 @@ body {
     height: 22vh;
     width: 30vw;
     position: absolute;
+    left: 0;
     text-align: center;
     bottom: 0px;
-    z-index: 110;
+    z-index: 1100;
+    display: block;
+    background-color: #fff;
 }
 
 #dish {
@@ -138,8 +141,8 @@ body {
     position: absolute;
     height: 10%;
     width: 100%;
-    background-color: fuchsia;
-    color: white;
+    background-color: #fac814;
+    color: #ef3d36;
     top: 40%;
     font-size: 35px;
     display: none;
