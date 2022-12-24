@@ -20,7 +20,7 @@ function egg_down(egg) {
 
 function check_egg_hits_floor(egg) {
     if (collision(egg, floor)) {
-        show_bulls_eye(egg);
+        // show_bulls_eye(egg);
         decrement_life();
         return true;
     }
@@ -29,27 +29,28 @@ function check_egg_hits_floor(egg) {
 
 function set_egg_to_initial_position(egg) {
     egg.css('top', egg_initial_position);
-    if(egg.selector == '#egg1'){
-        egg.css('left',(Math.random()*10)+'%')    
-    }else if(egg.selector == '#egg2'){
-        egg.css('left',((Math.random()*20)+20)+'%')
-    }else{
-        egg.css('left',((Math.random()*35)+50)+'%')
-    }
+    // if(egg.selector == '#egg1'){
+    //     egg.css('left',(Math.random()*10)+'%')    
+    // }else if(egg.selector == '#egg2'){
+    //     egg.css('left',((Math.random()*20)+20)+'%')
+    // }else{
+    //     egg.css('left',((Math.random()*50)+30)+'%')
+    // }
     
+    egg.css('left',(Math.random()*80)+'%') 
 }
 
-function show_bulls_eye(egg) {
-    bullseye_num = egg.attr('data-bullseye');
-    $('#bullseye' + bullseye_num).show();
-    hide_bulls_eye(bullseye_num);
-}
+// function show_bulls_eye(egg) {
+//     bullseye_num = egg.attr('data-bullseye');
+//     $('#bullseye' + bullseye_num).show();
+//     hide_bulls_eye(bullseye_num);
+// }
 
-function hide_bulls_eye(bullseye_num) {
-    setTimeout(function () {
-        $('#bullseye' + bullseye_num).hide();
-    }, 800);
-}
+// function hide_bulls_eye(bullseye_num) {
+//     setTimeout(function () {
+//         $('#bullseye' + bullseye_num).hide();
+//     }, 800);
+// }
 
 function decrement_life() {
     life--;
@@ -69,7 +70,7 @@ function check_egg_hits_basket(egg) {
 
 function update_score() {
     score++;
-    if (score % 30 === 0 && speed <= max_speed) {
+    if (score % 50 === 0 && speed <= max_speed) {
         speed++;
     }
     score_span.text(score);
