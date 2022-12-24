@@ -1,51 +1,51 @@
-// $(basket).on('touchmove', function (e) {
-//     basket.css('left', e.pageX);
-//     // Object.keys(e).forEach((prop)=> console.log(prop + ' -> ' + e[prop]));
+$(basket).on('touchmove', function (e) {
+    basket.css('left', e.pageX);
+    // Object.keys(e).forEach((prop)=> console.log(prop + ' -> ' + e[prop]));
+});
+
+// const draggableElement = document.getElementById('basket');
+
+// let isDragging = false;
+// let currentX;
+// let currentY;
+// let initialX;
+// let initialY;
+// let xOffset = 0;
+// let yOffset = 0;
+
+// draggableElement.addEventListener('dragstart', function(event) {
+//   initialX = event.clientX - xOffset;
+//   initialY = event.clientY - yOffset;
+
+//   if (event.target === draggableElement) {
+//     isDragging = true;
+//   }
 // });
 
-const draggableElement = document.getElementById('basket');
+// draggableElement.addEventListener('drag', function(event) {
+//   if (isDragging) {
+//     event.preventDefault();
+//     currentX = event.clientX + initialX;
+//     currentY = initialY;
 
-let isDragging = false;
-let currentX;
-let currentY;
-let initialX;
-let initialY;
-let xOffset = 0;
-let yOffset = 0;
+//     xOffset = currentX;
+//     yOffset = currentY;
 
-draggableElement.addEventListener('dragstart', function(event) {
-  initialX = event.clientX - xOffset;
-  initialY = event.clientY - yOffset;
+//     setTranslate(currentX, draggableElement);
+//   }
+// });
 
-  if (event.target === draggableElement) {
-    isDragging = true;
-  }
-});
+// draggableElement.addEventListener('dragend', function(event) {
+//   initialX = currentX;
+//   initialY = currentY;
 
-draggableElement.addEventListener('drag', function(event) {
-  if (isDragging) {
-    event.preventDefault();
-    currentX = event.clientX + initialX;
-    currentY = initialY;
+//   isDragging = false;
+// });
 
-    xOffset = currentX;
-    yOffset = currentY;
-
-    setTranslate(currentX, draggableElement);
-  }
-});
-
-draggableElement.addEventListener('dragend', function(event) {
-  initialX = currentX;
-  initialY = currentY;
-
-  isDragging = false;
-});
-
-function setTranslate(xPos, el) {
-  el.style.left = xPos + 'px';
-//   el.style.top = yPos + 'px';
-}
+// function setTranslate(xPos, el) {
+//   el.style.left = xPos + 'px';
+// //   el.style.top = yPos + 'px';
+// }
 
 
 function egg_down(egg) {

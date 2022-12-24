@@ -125,7 +125,7 @@ body {
     bottom: 0px;
     z-index: 1100;
     display: block;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 #dish {
