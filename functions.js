@@ -1,51 +1,17 @@
-$(basket).on('touchmove', function (e) {
-    basket.css('left', e.pageX);
-    // Object.keys(e).forEach((prop)=> console.log(prop + ' -> ' + e[prop]));
-});
-
-// const draggableElement = document.getElementById('basket');
-
-// let isDragging = false;
-// let currentX;
-// let currentY;
-// let initialX;
-// let initialY;
-// let xOffset = 0;
-// let yOffset = 0;
-
-// draggableElement.addEventListener('dragstart', function(event) {
-//   initialX = event.clientX - xOffset;
-//   initialY = event.clientY - yOffset;
-
-//   if (event.target === draggableElement) {
-//     isDragging = true;
-//   }
+// $(document).on('touchmove', function (e) {
+//     basket.css('left', e.touches[0].clientX);
+//     Object.keys(e).forEach((prop)=> console.log(prop + ' -> ' + e[prop]));
 // });
 
-// draggableElement.addEventListener('drag', function(event) {
-//   if (isDragging) {
-//     event.preventDefault();
-//     currentX = event.clientX + initialX;
-//     currentY = initialY;
-
-//     xOffset = currentX;
-//     yOffset = currentY;
-
-//     setTranslate(currentX, draggableElement);
-//   }
-// });
-
-// draggableElement.addEventListener('dragend', function(event) {
-//   initialX = currentX;
-//   initialY = currentY;
-
-//   isDragging = false;
-// });
-
-// function setTranslate(xPos, el) {
-//   el.style.left = xPos + 'px';
-// //   el.style.top = yPos + 'px';
-// }
+var draggable = document.getElementById('basket');
+draggable.addEventListener('touchmove', function(event) {
+  var touch = event.targetTouches[0];
+  
+  // Place element where the finger is
+  draggable.style.left = touch.pageX + 'px';
+  draggable.style.top = touch.pageY + 'px';
+  event.preventDefault();
+}, false);
 
 
 function egg_down(egg) {
@@ -65,11 +31,11 @@ function check_egg_hits_floor(egg) {
 function set_egg_to_initial_position(egg) {
     egg.css('top', egg_initial_position);
     if(egg.selector == '#egg1'){
-        egg.css('left',(Math.random()*20)+'%')    
+        egg.css('left',(Math.random()*10)+'%')    
     }else if(egg.selector == '#egg2'){
-        egg.css('left',((Math.random()*30)+30)+'%')
+        egg.css('left',((Math.random()*20)+20)+'%')
     }else{
-        egg.css('left',((Math.random()*30)+60)+'%')
+        egg.css('left',((Math.random()*35)+50)+'%')
     }
     
 }
@@ -92,7 +58,7 @@ function decrement_life() {
 }
 
 function check_egg_hits_basket(egg) {
-    if (collision(egg, basket)) {
+    if (collision(egg, dish)) {
         egg_top = parseInt(egg.css('top'));
         if (egg_top < basket_top) {
             update_score();
