@@ -8,8 +8,7 @@ draggable.addEventListener('touchmove', function(event) {
   var touch = event.targetTouches[0];
   
   // Place element where the finger is
-  draggable.style.left = touch.pageX + 'px';
-  draggable.style.top = touch.pageY + 'px';
+  draggable.style.left = touch.pageX;
   event.preventDefault();
 }, false);
 
@@ -70,7 +69,7 @@ function check_egg_hits_basket(egg) {
 
 function update_score() {
     score++;
-    if (score % 10 === 0 && speed <= max_speed) {
+    if (score % 30 === 0 && speed <= max_speed) {
         speed++;
     }
     score_span.text(score);
