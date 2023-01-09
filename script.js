@@ -1,6 +1,10 @@
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 $(function () {
 
-    the_game = function () {
+    the_game = async function () {
 
         if (check_egg_hits_floor(egg1) || check_egg_hits_basket(egg1)) {
             set_egg_to_initial_position(egg1);

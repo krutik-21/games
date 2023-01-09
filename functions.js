@@ -8,7 +8,7 @@ draggable.addEventListener('touchmove', function(event) {
   var touch = event.targetTouches[0];
   
   // Place element where the finger is
-  draggable.style.left = touch.pageX;
+  draggable.style.left = touch.pageX - 105;
   event.preventDefault();
 }, false);
 
@@ -29,15 +29,8 @@ function check_egg_hits_floor(egg) {
 
 function set_egg_to_initial_position(egg) {
     egg.css('top', egg_initial_position);
-    // if(egg.selector == '#egg1'){
-    //     egg.css('left',(Math.random()*10)+'%')    
-    // }else if(egg.selector == '#egg2'){
-    //     egg.css('left',((Math.random()*20)+20)+'%')
-    // }else{
-    //     egg.css('left',((Math.random()*50)+30)+'%')
-    // }
+    // console.log(vals[parseInt0(Math.random()*3)])
     
-    egg.css('left',(Math.random()*80)+'%') 
 }
 
 // function show_bulls_eye(egg) {
