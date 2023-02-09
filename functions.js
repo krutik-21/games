@@ -63,7 +63,7 @@ function check_egg_hits_basket(egg) {
 
 function update_score() {
     score++;
-    if (score % 50 === 0 && speed <= max_speed) {
+    if (score % 25 === 0 && speed <= max_speed) {
         speed++;
     }
     score_span.text(score);
