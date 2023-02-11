@@ -28,8 +28,9 @@ function check_egg_hits_floor(egg) {
 }
 
 function set_egg_to_initial_position(egg) {
-    egg.css('top', egg_initial_position);
-    // console.log(vals[parseInt0(Math.random()*3)])
+    pos = vals[parseInt(Math.random()*6)]
+    egg.css('top', pos);
+    console.log(pos)
     
 }
 

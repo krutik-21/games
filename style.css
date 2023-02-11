@@ -72,14 +72,17 @@ body {
 
 #egg1 {
     left: 0%;
+    top: -20%;
 }
 
 #egg2 {
     left: 40%;
+    top: -10%;
 }
 
 #egg3 {
     left: 80%;
+    top: -30%;
 }
 
 .bullseye {
