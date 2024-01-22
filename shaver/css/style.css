@@ -1,8 +1,22 @@
 body {
     margin: 0;
     overflow: hidden;
+    font-family: 'Poppins';
     background: url('../img/BG.jpg') center/cover;
-    background-origin: content-box;
+}
+
+.animation{
+    background-repeat: repeat-y; /* Repeat vertically */
+    animation: moveBackground 5s linear infinite; 
+}
+
+@keyframes moveBackground {
+    from {
+      background-position: 0 100%;
+    }
+    to {
+      background-position: 0 0; /* Adjust to match image height if needed */
+    }
 }
 
 .headerLogo{
@@ -26,9 +40,20 @@ body {
 }
 
 .landPage img{
-    height: 40vh;
+    height: 30vh;
     width: 100vw;
-    margin-top:10%;
+    /* margin-top:10%; */
+}
+
+.landPage div{
+    font-weight: 1000;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .playButton{
@@ -37,20 +62,47 @@ body {
 }
 
 .playButton button{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 6vh;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* height: 6vh; */
     width: 50vw;
-    margin-bottom: 3vh;
+    /* margin-bottom: 3vh; */
     border-radius: 20px;
     font-size: larger;
-    background: #0000ff;
+    font-weight: bolder;
+    background: #1476C5;
+    color: white;
 }
 
 .tandc img{
     width: 100vw;
-    margin-top: 3vh;
+    margin-top: 5vh;
 }
 
 .hide{
     display: none!important;
+}
+
+.gameEndText img{
+    height: 500px;
+    width: 100vw;
+    /* margin-top:10%; */
+}
+
+.gameEndText div{
+    font-weight: 1000;
+    font-size: 30px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.discountAmount{
+    font-size: 40px;
+}
+
+.offer{
+    font-size: 10px;
 }

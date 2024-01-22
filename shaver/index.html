@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catch the Falling Balls</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="./css/gamepage.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="gameHeader hide">
         <img src="./img/Game_Logo.png" alt="Game Logo" height="50">
-        <div>Points: <span id="points">0</span></div>
-        <div>Lives: <span id="lives">3</span></div>
+        <div class="headerText">
+            <span>Points: </span>
+            <span id="points">0</span>
+        </div>
+        <div class = "headerText">
+            <span>Lives: </span>
+            <span id="lives">3</span>
+        </div>
     </header>
     <header class="defaultHeader">
         <div class="headerLogo">
@@ -22,8 +29,15 @@
         </div>
     </header>
     <div class = "welcomeContainer">
-        <div class="landPage">
-            <img src="./img/homePageText.png" alt="landingText">
+        <div class="landPage" style="margin-top:10vh">
+            <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(35%); z-index:-1;">
+            <!-- <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(15%); z-index:-1; opacity:0.8"> -->
+            <div>
+                <strong>CONQUER</strong>
+                <strong>THE</strong>
+                <strong>LINT</strong> 
+                <strong>MONSTER</strong>
+            </div>
         </div>
         <div class="playButton">
             <button onclick="start();">PLAY</button>
@@ -40,8 +54,18 @@
     </div>
     
     <div class="gameEndContainer hide">
-        <div class="landPage">
-            <img src="./img/result-text.png" alt="landingText" />
+        <div class="gameEndText">
+            <div>CONGRATULATIONS!</div>
+            <!-- <img src="./img/shavers.png" alt="landingText" style="position:absolute; bottom: 0; z-index:-1"> -->
+            <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(35%); z-index:-1">
+            <div>
+                <span>YOU WON</span>
+                <span>FLAT</span>
+                <span class="discountAmount"></span> 
+                <span>OFF</span>
+                <span class="offer">ON PHILIPS HOME</span>
+                <span class="offer">APPLIANCES*</span> 
+            </div>
         </div>
         <div class="playButton">
             <button>REEDEM NOW</button>

@@ -2,6 +2,7 @@ let gameInterval;
 let points = 0;
 let lives = 3;
 var shaverHeight;
+var acc = 2;
 
 function createBall() {
     const ball = document.querySelector(".ballTemplate").cloneNode(true);
@@ -13,7 +14,7 @@ function createBall() {
 }
 
 function animateBall(ball, ballHeight) {
-    const speed = Math.random() * 2 + 2;
+    const speed = Math.random() * acc + 2;
     let top = 0;
 
     const moveBall = () => {
@@ -21,6 +22,9 @@ function animateBall(ball, ballHeight) {
             if (isBallCaught(ball)) {
                 points++;
                 document.getElementById('points').textContent = points;
+                if(!points%15){
+                    acc += 1
+                }
             } else {
                 lives--;
                 document.getElementById('lives').textContent = lives;
@@ -39,7 +43,6 @@ function animateBall(ball, ballHeight) {
 }
 
 function isBallCaught(ball) {
-    debugger;
     const basket = document.getElementById('basket');
     const ballRect = ball.getBoundingClientRect();
     const basketRect = basket.getBoundingClientRect();
@@ -69,10 +72,12 @@ function endGame() {
     // alert(`Game Over! Your score: ${points}`);
     document.querySelector(".defaultHeader").classList.remove("hide");
     document.querySelector(".gameEndContainer").classList.remove("hide");
+    document.querySelector(".finalScore").classList.remove("hide");
+    document.body.classList.remove("animation");
     document.querySelector(".gameHeader").classList.add("hide");
     document.querySelector("#gameContainer").classList.add("hide");
-    document.querySelector(".finalScore").classList.remove("hide");
     document.querySelector("#score").innerHTML = points;
+    document.querySelector(".discountAmount").innerHTML = "Rs " + points;
 
     resetGame();
 }
@@ -100,14 +105,15 @@ draggable.addEventListener('touchmove', function(event) {
 
 document.addEventListener('keydown', moveBasket);
 function start(){
+    points = 0;
+    lives = 3;
     document.querySelector(".defaultHeader").classList.add("hide");
     document.querySelector(".welcomeContainer").classList.add("hide");
+    document.querySelector(".gameEndContainer").classList.add("hide");
+    document.body.classList.add("animation");
     document.querySelector(".gameHeader").classList.remove("hide");
     document.querySelector("#gameContainer").classList.remove("hide");
     shaverHeight = parseInt(document.getElementById("basket").getBoundingClientRect().height);
     gameInterval = setInterval(createBall, 2000);
-    document.addEventListener("DOMContentLoaded", function () {
-        // Code to dynamically inject the image tag here
-        console.log("Starting Game..")
-    });
+
 }
