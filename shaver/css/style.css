@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: url('../img/BG.jpg') center/cover;
+    background-origin: content-box;
+}
+
+.headerLogo{
+    display: flex;
+    flex-direction: row;
+}
+
+.headerLogo img{
+    margin: 30px;
+    height: 50px;
+    /* width: 50vw; */
+}
+
+.headerLogo div{
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+}
+
+.landPage img{
+    height: 40vh;
+    width: 100vw;
+    margin-top:10%;
+}
+
+.playButton{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.playButton button{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 6vh;
+    width: 50vw;
+    margin-bottom: 3vh;
+    border-radius: 20px;
+    font-size: larger;
+    background: #0000ff;
+}
+
+.tandc img{
+    width: 100vw;
+    margin-top: 3vh;
+}
+
+.hide{
+    display: none!important;
+}

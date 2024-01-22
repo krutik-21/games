@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Balls</title>
+    <link rel="stylesheet" href="./css/gamepage.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="gameHeader hide">
+        <img src="./img/Game_Logo.png" alt="Game Logo" height="50">
+        <div>Points: <span id="points">0</span></div>
+        <div>Lives: <span id="lives">3</span></div>
+    </header>
+    <header class="defaultHeader">
+        <div class="headerLogo">
+            <img src="./img/defaultLogo.png">
+            <div class="finalScore hide">
+                YOUR SCORE : &nbsp<span id="score"></span>
+            </div>
+        </div>
+    </header>
+    <div class = "welcomeContainer">
+        <div class="landPage">
+            <img src="./img/homePageText.png" alt="landingText">
+        </div>
+        <div class="playButton">
+            <button onclick="start();">PLAY</button>
+        </div>
+        <div class="tandc">
+            <img src="./img/tandc.png">
+        </div>
+    </div>
+
+    <div id="gameContainer" class="hide">
+        <div id="basket">
+            <img id="shaver" src="./img/Game_Product.png" alt="Game Logo">
+        </div>
+    </div>
+    
+    <div class="gameEndContainer hide">
+        <div class="landPage">
+            <img src="./img/result-text.png" alt="landingText" />
+        </div>
+        <div class="playButton">
+            <button>REEDEM NOW</button>
+        </div>
+        <div class="playButton">
+            <button onclick="start();">PLAY AGAIN</button>
+        </div>
+        <div class="tandc">
+            <img src="./img/tandc.png">
+        </div>
+    </div>
+
+    <div class="ballTemplate">
+        <img src="./img/Monster1.PNG" height="70px">
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
