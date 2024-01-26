@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Personal Services";
+    src: url("./PersonalServices.ttf");
+}
+
 body {
     margin: 0;
     overflow: hidden;
@@ -7,7 +12,7 @@ body {
 
 .animation{
     background-repeat: repeat-y; /* Repeat vertically */
-    animation: moveBackground 5s linear infinite; 
+    animation: moveBackground 3.5s linear infinite; 
 }
 
 @keyframes moveBackground {
@@ -17,6 +22,15 @@ body {
     to {
       background-position: 0 0; /* Adjust to match image height if needed */
     }
+}
+
+.specialFont{
+    /* font-size: 35px; */
+    font-family: "Personal Services";
+}
+
+a{
+    text-decoration: none;
 }
 
 .headerLogo{
@@ -62,7 +76,7 @@ body {
 }
 
 .playButton button{
-    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family:"Personal Services";
     /* height: 6vh; */
     width: 50vw;
     /* margin-bottom: 3vh; */
@@ -82,8 +96,10 @@ body {
     display: none!important;
 }
 
+.gameEndText{
+     margin-top: 10vh;
+}
 .gameEndText img{
-    height: 500px;
     width: 100vw;
     /* margin-top:10%; */
 }

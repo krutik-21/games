@@ -2,7 +2,8 @@ let gameInterval;
 let points = 0;
 let lives = 3;
 var shaverHeight;
-var acc = 2;
+var timeout = 1700;
+var acc = 4;
 
 function createBall() {
     const ball = document.querySelector(".ballTemplate").cloneNode(true);
@@ -16,14 +17,19 @@ function createBall() {
 function animateBall(ball, ballHeight) {
     const speed = Math.random() * acc + 2;
     let top = 0;
-
+    
     const moveBall = () => {
         if (top > window.innerHeight - shaverHeight - ballHeight) {
             if (isBallCaught(ball)) {
                 points++;
                 document.getElementById('points').textContent = points;
-                if(!points%15){
-                    acc += 1
+                if(points%10 === 0){
+                    acc += 2;
+                    if(timeout >= 500){
+                        timeout -= 500;
+                    }
+                    clearInterval(gameInterval);
+                    gameInterval = setInterval(createBall,timeout);
                 }
             } else {
                 lives--;
@@ -114,6 +120,6 @@ function start(){
     document.querySelector(".gameHeader").classList.remove("hide");
     document.querySelector("#gameContainer").classList.remove("hide");
     shaverHeight = parseInt(document.getElementById("basket").getBoundingClientRect().height);
-    gameInterval = setInterval(createBall, 2000);
+    gameInterval = setInterval(createBall, timeout);
 
 }
