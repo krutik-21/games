@@ -1,7 +1,7 @@
 let gameInterval;
 let points = 0;
 let lives = 3;
-var shaverHeight;
+var shaverHeight, correction;
 var timeout = 1700;
 var acc = 4;
 
@@ -102,8 +102,8 @@ var draggable = document.getElementById('basket');
 draggable.addEventListener('touchmove', function(event) {
     event.preventDefault();
     var touch = event.targetTouches[0];
-// Place element where the finger is
-    newLeftVal = touch.pageX;
+    // Place element where the finger is
+    newLeftVal = touch.pageX - correction;
     // alert(newLeftVal);
     draggable.style.left = newLeftVal + "px";
 }, false);
@@ -119,7 +119,9 @@ function start(){
     document.body.classList.add("animation");
     document.querySelector(".gameHeader").classList.remove("hide");
     document.querySelector("#gameContainer").classList.remove("hide");
-    shaverHeight = parseInt(document.getElementById("basket").getBoundingClientRect().height);
+    const basket = document.getElementById("basket").getBoundingClientRect();
+    shaverHeight = parseInt(basket.height);
+    correction = basket.width / 2;
     gameInterval = setInterval(createBall, timeout);
 
 }

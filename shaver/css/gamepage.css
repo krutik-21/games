@@ -21,7 +21,7 @@
 }
 #basket {
     position: absolute;
-    bottom: 0px;
+    bottom: calc(8%);
     left: 0px;
     z-index: 1;
 }

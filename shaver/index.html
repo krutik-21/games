@@ -29,10 +29,10 @@
         </div>
     </header>
     <div class = "welcomeContainer">
-        <div class="landPage" style="margin-top:13vh">
-            <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(35%); z-index:-1;">
+        <div class="landPage" style="margin-top:7vh">
+            <img src="./img/shavers.png" class="shavers" alt="landingText">
             <!-- <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(15%); z-index:-1; opacity:0.8"> -->
-            <div class="specialFont">
+            <div class="welcomeText specialFont">
                 <span>CONQUER</span>
                 <span>THE</span>
                 <span>LINT</span> 
@@ -42,8 +42,11 @@
         <div class="playButton">
             <button onclick="start();">PLAY</button>
         </div>
+        <div class="offer info">
+            <span>SCORE HIGHER, GET REWARDS*</span>
+        </div>
         <div class="tandc">
-            <img src="./img/tandc.png">
+            <span>*T&C Apply</span>
         </div>
     </div>
 
@@ -55,15 +58,17 @@
     
     <div class="gameEndContainer hide">
         <div class="gameEndText">
-            <div class="specialFont">CONGRATULATIONS!</div>
+            <div class="specialFont">CONGRATULATION!</div>
             <!-- <img src="./img/shavers.png" alt="landingText" style="position:absolute; bottom: 0; z-index:-1"> -->
-            <img src="./img/shavers.png" alt="landingText" style="position:absolute; top: calc(35%); z-index:-1">
+            <img src="./img/shavers.png" class="shavers"  alt="landingText">
             <div>
                 <span>FLAT</span>
                 <span class="discountAmount"></span> 
                 <span>OFF</span>
-                <span class="offer">ON PHILIPS HOME</span>
-                <span class="offer">APPLIANCES*</span> 
+                <div>
+                    <span class="offer">ON PHILIPS HOME</span>
+                    <span class="offer">APPLIANCES*</span> 
+                </div>
             </div>
         </div>
         <div class="playButton">
@@ -73,7 +78,7 @@
             <button onclick="start();">PLAY AGAIN</button>
         </div>
         <div class="tandc">
-            <img src="./img/tandc.png">
+            <span>*T&C Apply</span>
         </div>
     </div>
 
