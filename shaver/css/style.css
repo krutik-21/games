@@ -74,16 +74,19 @@ a{
 .playButton{
     margin: 0 auto;
     text-align: center;
+    margin: 10px auto;
 }
 
 .playButton button{
     font-family:"Personal Services";
     /* height: 6vh; */
     min-width: 40vw;
+    padding-top: 15px;
+    padding-bottom: 10px;
     /* margin-bottom: 3vh; */
     border-radius: 20px;
     font-size: larger;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     background: #1476C5;
     color: white;
 }
@@ -117,11 +120,11 @@ a{
 
 .shavers{
     position: absolute;
-    top: calc(28%);
+    top: calc(30%);
     z-index: -1;
 }
 .discountAmount{
-    font-size: 40px;
+    font-size: 35px;
     margin: -13px 0px; 
 }
 

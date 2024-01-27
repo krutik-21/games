@@ -2,7 +2,7 @@ let gameInterval;
 let points = 0;
 let lives = 3;
 var shaverHeight, correction;
-var timeout = 1700;
+var timeout = 2000;
 var acc = 4;
 
 function createBall() {
@@ -24,8 +24,8 @@ function animateBall(ball, ballHeight) {
                 points++;
                 document.getElementById('points').textContent = points;
                 if(points%10 === 0){
-                    acc += 2;
-                    if(timeout >= 500){
+                    acc += 5;
+                    if(timeout > 1000){
                         timeout -= 500;
                     }
                     clearInterval(gameInterval);
