@@ -1,15 +1,16 @@
 let gameInterval;
 let points = 0;
 let lives = 3;
-var shaverHeight, correction;
+var shaverTop, correction;
 var timeout = 2000;
 var acc = 4;
+var reloadTimeout;
 
 function createBall() {
     const ball = document.querySelector(".ballTemplate").cloneNode(true);
     ball.classList.add('ball');
     ball.classList.remove("ballTemplate");
-    ball.style.left = `${Math.random() * (window.innerWidth - 70)}px`;
+    ball.style.left = `${Math.random() * (window.innerWidth -132)}px`;
     document.querySelector('#gameContainer').appendChild(ball);
     animateBall(ball, ball.getBoundingClientRect().height);
 }
@@ -19,7 +20,8 @@ function animateBall(ball, ballHeight) {
     let top = 0;
     
     const moveBall = () => {
-        if (top > window.innerHeight - shaverHeight - ballHeight) {
+        // if (top > window.innerHeight - shaverTop - ballHeight) {
+        if (ball.getBoundingClientRect().bottom >= shaverTop) {
             if (isBallCaught(ball)) {
                 points++;
                 document.getElementById('points').textContent = points;
@@ -48,17 +50,27 @@ function animateBall(ball, ballHeight) {
     const ballInterval = setInterval(moveBall, 20);
 }
 
+function isInBetween(val, min, max){
+    return val > min && val < max;
+}
+
 function isBallCaught(ball) {
     const basket = document.getElementById('basket');
     const ballRect = ball.getBoundingClientRect();
     const basketRect = basket.getBoundingClientRect();
+    const rightVal = basketRect.right - basketRect.width * 0.13793103448275862;
+    const leftVal = basketRect.left + basketRect.width * 0.3793103448275862;
 
-    return (
-        ballRect.bottom >= basketRect.top &&
-        ballRect.top <= basketRect.bottom &&
-        ballRect.right >= basketRect.left &&
-        ballRect.left <= basketRect.right
+    return ( 
+        isInBetween(ballRect.right, leftVal, rightVal) || isInBetween(ballRect.left, leftVal, rightVal) ||
+        (isInBetween(leftVal,ballRect.left, ballRect.right) && isInBetween(rightVal,ballRect.left, ballRect.right))
     );
+    // return (
+    //     ballRect.bottom >= basketRect.top &&
+    //     ballRect.top <= basketRect.bottom &&
+    //     ballRect.right >= basketRect.left &&
+    //     ballRect.left <= basketRect.right
+    // );
 }
 
 function moveBasket(event) {
@@ -91,10 +103,15 @@ function endGame() {
 function resetGame() {
     points = 0;
     lives = 3;
+    timeout = 2000;
     document.getElementById('points').textContent = points;
     document.getElementById('lives').textContent = lives;
     // document.querySelector('button').style.display = 'block';
     document.querySelectorAll('.ball').forEach(ball => ball.remove());
+    clearInterval(gameInterval);
+    reloadTimeout = setTimeout(()=>{
+        location.reload();
+    },10000);
     // window.location = "/shaver/gameEnd.html";
 }
 
@@ -111,6 +128,10 @@ draggable.addEventListener('touchmove', function(event) {
 
 document.addEventListener('keydown', moveBasket);
 function start(){
+    if(reloadTimeout){
+        clearTimeout(reloadTimeout);
+        reloadTimeout = undefined;
+    }
     points = 0;
     lives = 3;
     document.querySelector(".defaultHeader").classList.add("hide");
@@ -120,7 +141,7 @@ function start(){
     document.querySelector(".gameHeader").classList.remove("hide");
     document.querySelector("#gameContainer").classList.remove("hide");
     const basket = document.getElementById("basket").getBoundingClientRect();
-    shaverHeight = parseInt(basket.height);
+    shaverTop = parseInt(basket.top) + 20;
     correction = basket.width / 2;
     gameInterval = setInterval(createBall, timeout);
 
