@@ -8,12 +8,13 @@ body {
     overflow: hidden;
     font-family: 'Poppins';
     background: url('../img/BG.jpg') center/cover;
+    background-size: 100vh;
     color: white;
 }
 
 .animation{
     background-repeat: repeat-y; /* Repeat vertically */
-    animation: moveBackground 3.5s linear infinite; 
+    animation: moveBackground 6s linear infinite; 
 }
 
 @keyframes moveBackground {
