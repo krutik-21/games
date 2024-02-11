@@ -76,7 +76,7 @@ a{
 .playButton{
     margin: 0 auto;
     text-align: center;
-    margin: 10px auto;
+    margin-top: 10px;
 }
 
 .playButton button{
@@ -94,10 +94,10 @@ a{
 }
 
 .tandc{
-    position: fixed;
-    bottom: calc(10%);
+    position: absolute;
+    /* bottom: calc(10%); */
     font-size: smaller;
-    right: calc(4%);
+    right: 10px;
 }
 
 .hide{
@@ -141,6 +141,7 @@ a{
 
 .info{
     margin-top: 7vh;
+    text-align: center;
 }
 
 .headerText{
