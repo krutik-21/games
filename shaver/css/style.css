@@ -54,7 +54,7 @@ a{
 }
 
 #score{
-    font-size: 6vh;
+    font-size: 7vh;
 }
 
 .landPage img{
@@ -87,7 +87,7 @@ a{
     padding-bottom: 1.5vh;
     /* margin-bottom: 3vh; */
     border-radius: 5em;
-    font-size: larger;
+    font-size: large;
     /* font-weight: bolder; */
     background: #1476C5;
     color: white;
@@ -95,7 +95,7 @@ a{
 
 .tandc{
     position: fixed;
-    bottom: calc(2%);
+    bottom: calc(10%);
     font-size: smaller;
     right: calc(4%);
 }
@@ -110,7 +110,7 @@ a{
 }
 
 .gameEndText div{
-    font-size: 5vh;
+    font-size: 4.2vh;
     /* color: white; */
     margin: 0 auto;
     text-align: center;
@@ -121,11 +121,11 @@ a{
 
 .shavers{
     position: absolute;
-    top: calc(33%);
+    top: calc(31%);
     z-index: -1;
 }
 .discountAmount{
-    font-size: 6vh;
+    font-size: 5vh;
     font-weight: bolder;
     margin: -2vh 0vw; 
 }
@@ -136,7 +136,7 @@ a{
 }
 
 .welcomeText span{
-    margin-bottom: 2.5vh;
+    margin-bottom: 1.5vh;
 }
 
 .info{
@@ -145,4 +145,8 @@ a{
 
 .headerText{
     color: black;
+}
+
+.gameEndText > .specialFont{
+    font-size: 4.8vh;
 }

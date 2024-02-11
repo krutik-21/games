@@ -1,18 +1,22 @@
 .gameHeader {
     background-color: white;
-    padding: 20px;
+    padding: 1.8vh;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     height: 7vh;
 }
 
+.gameHeader img{
+    height: 7vh;
+}
 .headerText{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 #gameContainer {
     position: relative;
@@ -21,13 +25,13 @@
 }
 #basket {
     position: absolute;
-    bottom: calc(2%);
+    bottom: calc(10%);
     left: 0px;
     z-index: 1;
 }
 
 #basket img{
-    height: 20vh;
+    height: 17.5vh;
 }
 
 .ball {
@@ -37,6 +41,10 @@
 
 .ballTemplate{
     display:none;
+}
+
+.monster{
+    height: 13vh;
 }
 
 /* button {
